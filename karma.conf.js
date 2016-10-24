@@ -1,29 +1,25 @@
-var webpackConfig = require("./webpack.config.js");
-
-// browsers: ['Chrome'],
-// Remove Hostname, Port, RunnerPort
+var webpackConfig = require('./webpack.config.js');
 
 module.exports = function (config) {
-    config.set({
-       browsers: ['PhantomJS'],
-       hostname: process.env.IP,
-       port: process.env.PORT,
-       runnerPort: 0,
-       singleRun: true,
-       frameworks: ['mocha'],
-       files: ['app/tests/**/*.test.jsx'],
-       preprocessors: {
-            'app/tests/**/*.test.jsx': ['webpack', 'sourcemap']
-       },
-       reporters: ['mocha'],
-       client: {
-           mocha: {
-               timeout: '5000'
-           }
-       },
-       webpack: webpackConfig,
-       webpackServer: {
-           noInfo: true
-       }
-    });
-}
+  config.set({
+    // browsers: ['Chrome'],
+    hostname: process.env.IP,
+    port: process.env.PORT,
+    singleRun: true,
+    frameworks: ['mocha'],
+    files: ['app/tests/**/*.test.jsx'],
+    preprocessors: {
+      'app/tests/**/*.test.jsx': ['webpack', 'sourcemap']
+    },
+    reporters: ['mocha'],
+    client: {
+      mocha: {
+        timeout: '30000'
+      }
+    },
+    webpack: webpackConfig,
+    webpackServer: {
+      noInfo: true
+    }
+  });
+};
