@@ -16,11 +16,11 @@ module.exports = function (config) {
       mocha: {
         timeout: '30000'
       },
-      timeout: '30000'
     },
     webpack: webpackConfig,
     webpackServer: {
       noInfo: true
-    }
+    },
+    browserNoActivityTimeout: 30000
   });
 };
