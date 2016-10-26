@@ -22,7 +22,7 @@ var Controls = React.createClass({
         return (
             <div className='controls'>
                 {renderStartPauseButton()}
-                <button className="button alert hallow" onClick={this.onStatusChange('stopped')}>Clear</button>
+                <button className="alert hollow button" onClick={this.onStatusChange('stopped')}>Clear</button>
             </div>
         );
     }
